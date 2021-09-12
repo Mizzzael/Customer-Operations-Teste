@@ -41,7 +41,7 @@ const initProducts = async (link = '/frontend-intern-challenge-api.iurykrieger.v
         (template as HTMLElement).innerHTML = code
         productsContainer?.appendChild(template)
     })
-    return nextPage
+    return `/${nextPage}`
 } 
 
 window.addEventListener('load', async () => {
