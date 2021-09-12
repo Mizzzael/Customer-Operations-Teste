@@ -154,103 +154,101 @@ class FormValidator {
     }
 }
 
-imageLoaded((document.querySelector('body') as any), () => {    
-    window.addEventListener('load', async () => {
-        const formOne = (document.getElementById('formOne') as HTMLFormElement)
-        const formTwo = (document.getElementById('formTwo') as HTMLFormElement)
-        const inputMask =  document.getElementById('cpf')
-        const nextPageButton = document.getElementById('next')
-        const FormOneController = new FormValidator(formOne, [
-            {
-                name: 'name',
-                isRequired: true
-            },
-            {
-                name: 'email',
-                isRequired: true,
-                validator(email: string) {
-                    const check = emailvalidator.validate(email)
-                    if (!check) {
-                        return [check, `Email ${email} é inválido`]
-                    }
-                    return [check, `Email ${email} é válido`]
+imageLoaded((document.querySelector('body') as any), async () => {    
+    const formOne = (document.getElementById('formOne') as HTMLFormElement)
+    const formTwo = (document.getElementById('formTwo') as HTMLFormElement)
+    const inputMask =  document.getElementById('cpf')
+    const nextPageButton = document.getElementById('next')
+    const FormOneController = new FormValidator(formOne, [
+        {
+            name: 'name',
+            isRequired: true
+        },
+        {
+            name: 'email',
+            isRequired: true,
+            validator(email: string) {
+                const check = emailvalidator.validate(email)
+                if (!check) {
+                    return [check, `Email ${email} é inválido`]
                 }
-            },
-            {
-                name: 'cpf',
-                isRequired: true,
-                validator(cpf: string) {
-                    const check = cpfvalidator.isValid(cpf)
-                    if (!check) {
-                        return [check, `CPF ${cpf} é inválido`]
-                    }
-                    return [check, `CPF ${cpf} é válido`]
-                }
-            },
-            {
-                name: 'genrer',
-                isRequired: true
+                return [check, `Email ${email} é válido`]
             }
-        ])
-
-        const FormOneControllerTwo = new FormValidator(formTwo, [
-            {
-                name: 'name',
-                isRequired: true
-            },
-            {
-                name: 'email',
-                isRequired: true,
-                validator(email: string) {
-                    const check = emailvalidator.validate(email)
-                    if (!check) {
-                        return [check, `Email ${email} é inválido`]
-                    }
-                    return [check, `Email ${email} é válido`]
+        },
+        {
+            name: 'cpf',
+            isRequired: true,
+            validator(cpf: string) {
+                const check = cpfvalidator.isValid(cpf)
+                if (!check) {
+                    return [check, `CPF ${cpf} é inválido`]
                 }
-            },
-        ])
-        const parallaxTargets = '.parallax'
-        let nextPage = ''
-        inputMask && VMasker(inputMask).maskPattern('999.999.999-99')
-        new Rellax(parallaxTargets)
-        nextPage = await initProducts()
-        anime({
-            targets: '#loadingPage',
-            opacity: [1, 0],
-            duration: 1000,
-            easing: 'linear',
-            complete() {
-                animation.destroy();
-                (document.getElementById('loadingPage') as HTMLElement).style.display = 'none'
+                return [check, `CPF ${cpf} é válido`]
             }
-        })
+        },
+        {
+            name: 'genrer',
+            isRequired: true
+        }
+    ])
 
-        formOne.addEventListener('submit', (e: Event) => {
-            e.preventDefault()
-            FormOneController.check()
-            if (FormOneController.Errors.size) return
-            console.log(FormOneController.values)
-        })
+    const FormOneControllerTwo = new FormValidator(formTwo, [
+        {
+            name: 'name',
+            isRequired: true
+        },
+        {
+            name: 'email',
+            isRequired: true,
+            validator(email: string) {
+                const check = emailvalidator.validate(email)
+                if (!check) {
+                    return [check, `Email ${email} é inválido`]
+                }
+                return [check, `Email ${email} é válido`]
+            }
+        },
+    ])
+    const parallaxTargets = '.parallax'
+    let nextPage = ''
+    inputMask && VMasker(inputMask).maskPattern('999.999.999-99')
+    new Rellax(parallaxTargets)
+    nextPage = await initProducts()
+    anime({
+        targets: '#loadingPage',
+        opacity: [1, 0],
+        duration: 1000,
+        easing: 'linear',
+        complete() {
+            animation.destroy();
+            (document.getElementById('loadingPage') as HTMLElement).style.display = 'none'
+        }
+    })
 
-        formTwo.addEventListener('submit', (e: Event) => {
-            e.preventDefault()
-            FormOneControllerTwo.check()
-            if (FormOneControllerTwo.Errors.size) return
-            console.log(FormOneControllerTwo.values)
-        })
+    formOne.addEventListener('submit', (e: Event) => {
+        e.preventDefault()
+        FormOneController.check()
+        if (FormOneController.Errors.size) return
+        console.log(FormOneController.values)
+    })
+
+    formTwo.addEventListener('submit', (e: Event) => {
+        e.preventDefault()
+        FormOneControllerTwo.check()
+        if (FormOneControllerTwo.Errors.size) return
+        console.log(FormOneControllerTwo.values)
+    })
         
-        nextPageButton?.addEventListener('click', async () => {
-            const button = (document.getElementById('loadingProductsButton') as HTMLButtonElement)
-            const loading = (document.getElementById('loadingProductsBox') as HTMLButtonElement)
-            button.style.display = 'none'
-            loading.classList.remove('hide')
-            const animation = LoadingProducts()
-            nextPage = await initProducts(nextPage)
-            animation.destroy()
-            loading.classList.add('hide')
-            button.style.display = 'block'
-        })
+    nextPageButton?.addEventListener('click', async () => {
+        const button = (document.getElementById('loadingProductsButton') as HTMLButtonElement)
+        const loading = (document.getElementById('loadingProductsBox') as HTMLButtonElement)
+        button.style.display = 'none'
+        loading.classList.remove('hide')
+        const animation = LoadingProducts()
+        nextPage = await initProducts(nextPage)
+        animation.destroy()
+        loading.classList.add('hide')
+        button.style.display = 'block'
     })
 })
 
