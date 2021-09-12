@@ -1,0 +1,11 @@
+/*!
+ * cpf-cnpj-validator v1.0.3
+ * (c) 2020-present Carvalho, Vinicius Luiz <carvalho.viniciusluiz@gmail.com>
+ * Released under the MIT License.
+ */
+
+/*!
+ * imagesLoaded v4.1.4
+ * JavaScript is all like "You images are done yet or what?"
+ * MIT License
+ */
