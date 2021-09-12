@@ -10,6 +10,19 @@ paddingX(prefix)
             padding-left: (num * 1em)
             padding-right: (num * 1em)
 
+marginX(prefix)
+    for num in (0..12)
+        {prefix}\\:mx-{num}
+            margin-left: (num * 1em)
+            margin-right: (num * 1em)
+
+marginY(prefix)
+    for num in (0..12)
+        {prefix}\\:my-{num}
+            margin-top: (num * 1em)
+            margin-bottom: (num * 1em)
+
+
 .boxSizzing
     box-sizing: border-box
 
@@ -44,20 +57,34 @@ for num in (0..12)
 .col-auto
     width: auto
     @extend .boxSizzing
+
 for num in (1..12)
     .col-{num}
         width: ((100%/12) * num)
         @extend .boxSizzing
 
+for num in (0..12)
+    .mx-{num}
+        margin-left: (num * 1em)
+        margin-right: (num * 1em)
+
+    .my-{num}
+        margin-top: (num * 1em)
+        margin-bottom: (num * 1em)
+
 @media only screen and (min-width 310px)   
     .container
-        width: 90vw
+        width: 100vw
 
     cols(".sm")
 
     paddingX(".sm")
 
     paddingY(".sm")
+
+    marginY(".sm")
+
+    marginX(".sm")
     
 
 @media only screen and (min-width 768px)
@@ -69,6 +96,10 @@ for num in (1..12)
     paddingX(".md")
     
     paddingY(".md")
+
+    marginY(".md")
+
+    marginX(".md")
     
 
 @media only screen and (min-width 960px)
@@ -81,6 +112,10 @@ for num in (1..12)
     
     paddingY(".lg")
 
+    marginY(".lg")
+
+    marginX(".lg")
+
 
 @media only screen and (min-width 1200px)
     .container
@@ -91,5 +126,9 @@ for num in (1..12)
     paddingX(".xl")
     
     paddingY(".xl")
+
+    marginY(".xl")
+
+    marginX(".xl")
 
     

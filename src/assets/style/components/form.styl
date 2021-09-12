@@ -5,7 +5,7 @@ input:not([type="checkbox"])
     margin 0
     padding-bottom 0.9em
     padding-top 0.9em
-    font-size 01em
+    
 
 .row-form
     padding 8px 0
@@ -37,3 +37,35 @@ input:not([type="checkbox"])
 input[type="checkbox"]:not(:checked) ~ .checkbox-label:before,
 input[type="radio"]:not(:checked) ~ .checkbox-label:before
     transform: scale(0)
+
+@media only screen and (min-width 320px)
+    .row-form
+        & label:not(.checkbox-label)
+             padding 4px 0
+
+    [type="submit"]
+        font-size 0.9em
+
+    .checkbox-row
+        gap 1em
+
+    .checkbox-label-text
+        margin 0 5px
+        font-size 0.9em
+
+@media only screen and (min-width 768px)
+        
+    [type="submit"]
+        font-size 1em
+
+    .checkbox-row
+        gap 0
+
+    .checkbox-label-text
+        margin 0
+        font-size 1em
+
+@media only screen and (min-width 960px)
+    .row-form
+        & label:not(.checkbox-label)
+             padding 4px 1em
