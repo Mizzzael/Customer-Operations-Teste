@@ -1,0 +1,30 @@
+.cursor-pointer
+    cursor pointer
+
+.btn
+    text-decoration: none
+    color: #888888
+    @extends .cursor-pointer
+    border-radius: 0.18em
+    transition linear 210ms all
+    box-sizing: border-box
+    &:hover
+        background-color #cecece
+    &-default
+        background-color #fff
+        box-shadow 0 0 4px #3c3c3c
+    &-submit
+        background-color #FFFFFF
+        border solid 2px #888888
+        border-radius: 0.20em
+
+@media only screen and (min-width 320px)
+    .btn
+        padding 0.7em 0.5em
+        font-size 0.8em
+
+@media only screen and (min-width 768px)
+    .btn
+        padding 0.7em 4em
+        margin: 1em 0
+        font-size 1.05em

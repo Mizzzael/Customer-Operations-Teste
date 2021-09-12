@@ -1,0 +1,42 @@
+{
+  "name": "desafio-frontend",
+  "version": "1.0.0",
+  "description": "Teste para a vaga de Frontend para o time de Customer Operstions.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "author": "Mizzzael",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/rellax": "^1.7.4",
+    "@types/vanilla-masker": "^1.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.2.2",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^6.1.0",
+    "ts-loader": "^9.2.5",
+    "url-loader": "^4.1.1",
+    "webp-loader": "^0.6.0",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "rellax": "^1.12.1",
+    "terser-webpack-plugin": "^5.2.4",
+    "typescript": "^4.4.3",
+    "vanilla-masker": "^1.2.0"
+  }
+}

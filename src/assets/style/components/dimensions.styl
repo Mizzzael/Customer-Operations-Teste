@@ -1,0 +1,95 @@
+paddingY(prefix)
+    for num in (0..12)
+        {prefix}\\:py-{num}
+            padding-top: (num * 1em)
+            padding-bottom: (num * 1em)
+
+paddingX(prefix)
+    for num in (0..12)
+        {prefix}\\:px-{num}
+            padding-left: (num * 1em)
+            padding-right: (num * 1em)
+
+.boxSizzing
+    box-sizing: border-box
+
+cols(prefix)
+    {prefix}\\:col-auto
+        width: auto
+        @extends .boxSizzing
+    for num in (1..12)
+        {prefix}\\:col-{num}
+            width: ((100%/12) * num)
+            @extends .boxSizzing
+
+.w-full
+    width 100%
+    max-width 100vw
+    @extend .boxSizzing
+
+.container
+    margin 0 auto
+    @extend .boxSizzing
+
+for num in (0..12)
+    .py-{num}
+        padding-top: (num * 1em)
+        padding-bottom: (num * 1em)
+
+for num in (0..12)
+    .px-{num}
+        padding-left: (num * 1em)
+        padding-right: (num * 1em)
+
+.col-auto
+    width: auto
+    @extend .boxSizzing
+for num in (1..12)
+    .col-{num}
+        width: ((100%/12) * num)
+        @extend .boxSizzing
+
+@media only screen and (min-width 310px)   
+    .container
+        width: 90vw
+
+    cols(".sm")
+
+    paddingX(".sm")
+
+    paddingY(".sm")
+    
+
+@media only screen and (min-width 768px)
+    .container
+        width: 768px
+
+    cols(".md")
+
+    paddingX(".md")
+    
+    paddingY(".md")
+    
+
+@media only screen and (min-width 960px)
+    .container
+        width: 768px
+
+    cols(".lg")
+
+    paddingX(".lg")
+    
+    paddingY(".lg")
+
+
+@media only screen and (min-width 1200px)
+    .container
+        width: 1200px
+
+    cols(".xl")
+
+    paddingX(".xl")
+    
+    paddingY(".xl")
+
+    

@@ -1,0 +1,144 @@
+@import "./reset.css"
+@import "./components/generic.styl";
+@import "./components/dimensions.styl";
+@import "./components/text.styl";
+@import "./components/button.styl";
+@import "./components/form.styl";
+@import "./components/products.styl";
+
+.position-relative
+    position relative
+
+.display-flex
+    display flex
+
+.flex-wrap
+    flex-wrap: wrap
+
+.align-items
+    align-items: center
+
+.align-contents
+    align-content: baseline
+
+.justify-center
+    justify-content: center
+
+.gap
+    gap 1em
+
+.z-index-9
+    z-index 9
+
+.main_header-skew
+    background-position top center
+    background-repeat no-repeat
+    background-attachment fixed
+    position relative
+    overflow hidden
+    @extends .display-flex
+    @extends .flex-wrap
+    @extends .align-contents
+    &:before
+        content: ""
+        background-color #ffffff
+        width 100%
+        height 40vh
+        position absolute
+        left 0
+        transform skewY(5deg) skewX(0)
+
+.hide
+    display none
+
+.divider-box
+    position relative
+    padding 5px 0
+    text-align center
+    &:before
+        content ""
+        display block
+        height 0.5px
+        width 100%
+        background-color #888888
+        top 0
+        bottom 0
+        position absolute
+        left 0
+        margin auto
+    &_label
+        margin 0 auto
+        display inline-block
+        position relative
+        z-index 9
+        background-color #ffffff
+        padding 0.32em 1em
+        font-size: 1.2em
+        font-weight bold
+        color #888888
+
+.footer-disclaimer
+    background-color #888888
+    box-sizing: border-box
+    @extends .position-relative
+    &:before
+        content: ""
+        display block
+        width 100%
+        height 30vh
+        position absolute
+        left 0
+        background-color #fff
+        transform skewY(-4deg) skewX(0)
+        z-index 5
+    &:after
+        content: ""
+        display block
+        position absolute
+        top 0   
+        left 0
+        width 100%
+        height 60vh
+        background-color rgba(0, 0, 0, 0.6)
+        z-index 1
+    &_text
+        color #FFFFFF
+        font-size small
+        position relative
+        z-index 9
+    &_parallax
+        position absolute
+        left 0  
+        top: 0
+        z-index 1
+        max-width 100%
+
+@media only screen and (min-width: 320px)
+    .main_header-skew
+        min-height 30vh
+        background-image url("../assets/images/wenjun-lin-.jpg")
+        background-size: 120%
+        padding 2em 0 0
+        &:before
+            bottom -35vh
+
+    .sm\\:hide
+        display none
+
+@media only screen and (min-width: 960px)
+    .lg\\:hide
+        display none
+
+    .main_header-skew
+        min-height 70vh
+        padding 8em 0
+        background-size: 100%
+        &:before
+            bottom -20vh
+
+    .footer-disclaimer
+        height 60vh
+        padding-top 20vh
+        overflow hidden
+        &:before
+            top -20vh

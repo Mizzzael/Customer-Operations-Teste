@@ -1,0 +1,39 @@
+input:not([type="checkbox"])
+    padding: 0.7em 1em;
+
+[type="submit"]
+    margin 0
+    padding-bottom 0.9em
+    padding-top 0.9em
+    font-size 01em
+
+.row-form
+    padding 8px 0
+    & label:not(.checkbox-label)
+        padding 4px 1em
+        
+
+.checkbox-label
+    width 18px
+    height 18px
+    border solid 1px #333
+    display block
+    padding 0
+    border-radius 100%
+    cursor pointer
+    position relative
+    display flex
+    align-items: center
+    justify-content: center
+    &:before
+        content: ""
+        display block
+        width 14px
+        height 14px
+        background-color #888888
+        border-radius: 100%
+        transition ease 200ms transform
+
+input[type="checkbox"]:not(:checked) ~ .checkbox-label:before,
+input[type="radio"]:not(:checked) ~ .checkbox-label:before
+    transform: scale(0)

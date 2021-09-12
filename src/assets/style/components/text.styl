@@ -1,0 +1,64 @@
+align(prefix)
+    for num in center left right justify
+        {prefix}\\:text-{num}
+            text-align: num
+
+for num in center left right justify
+    .text-{num}
+        text-align: num
+
+.marginZero
+    margin 0
+
+.title-h5
+    font-size 1.3em
+    line-height 1.4em
+    @extends .marginZero
+
+.title-h4
+    font-size 1.4em
+    line-height 1.5em
+    @extends .marginZero
+
+.title-h2
+    font-size 2.2em
+    line-height 1.2em
+    @extends .marginZero
+
+.text-default
+    font-size 1em
+    margin 0.5em 0
+
+.font-normal
+    font-weight normal
+
+.color-white
+    color #ffffff
+    
+.color-gray
+    color #888888
+
+@media only screen and (max-width 768px)
+    
+    .title-h4
+        font-size 0.9em
+        line-height 1.2em
+
+    .title-h2
+        font-size 1.6em
+        line-height 1em
+
+    .text-default
+        font-size 0.8em
+
+@media only screen and (min-width: 320px)
+    align(".sm")
+
+@media only screen and (min-width: 768px)
+    align(".md")
+
+@media only screen and (min-width: 960px)
+    align(".lg")
+
+@media only screen and (min-width: 1200px)
+    align(".xl")
