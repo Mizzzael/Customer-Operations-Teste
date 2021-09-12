@@ -74,35 +74,38 @@
                     </section>
                     <section class="sm:col-12 lg:col-5 lg:py-1">
                         <section class="col w-full px-1 py-1">
-                            <form class="w-full">
+                            <form id="formOne" class="w-full">
                                 <section class="w-full row-form">
                                     <label class="w-full text-default color-gray cursor-pointer" for="name">
                                         Seu nome:
                                     </label>
                                     <section class="w-full py-0 lg:px-1">
-                                        <input id="name" class="w-full px-1 py-0 text-default" type="text">
+                                        <input id="name" name="name" class="w-full px-1 py-0 text-default" type="text">
                                     </section>
+                                    <p data-error="name" class="text-default color-error lg:px-1 hide"></p>
                                 </section>
                                 <section class="w-full row-form">
                                     <label class="w-full text-default color-gray cursor-pointer" for="email">
                                         E-mail:
                                     </label>
                                     <section class="w-full py-0 lg:px-1">
-                                        <input id="email" class="w-full px-1 py-0 text-default" type="email">
+                                        <input id="email" name="email" class="w-full px-1 py-0 text-default" type="email">
                                     </section>
+                                    <p data-error="email" class="text-default color-error lg:px-1 hide"></p>
                                 </section>
                                 <section class="w-full row-form">
                                     <label class="w-full text-default color-gray cursor-pointer" for="cpf">
                                         CPF:
                                     </label>
                                     <section class="w-full py-0 lg:px-1">
-                                        <input id="cpf" class="w-full px-1 py-0 text-default" type="text">
+                                        <input id="cpf" name="cpf" class="w-full px-1 py-0 text-default" type="text">
                                     </section>
+                                    <p data-error="cpf" class="text-default color-error lg:px-1 hide"></p>
                                 </section>
                                 <section class="w-full row-form">
                                     <section class="display-flex checkbox-row">
                                         <div class="lg:px-1 display-flex">
-                                            <input name="genrer" id="male" class="hide" type="radio">
+                                            <input name="genrer" id="male" value="male" class="hide" type="radio">
                                             <label class="checkbox-label" for="male">
                                                 <i class="checkbox-label_dots"></i>
                                             </label>
@@ -112,7 +115,7 @@
                                         </div>
                                         <div class="md:px-1 display-flex">
                                             <input name="genrer" id="female" class="hide" type="radio">
-                                            <label class="checkbox-label" for="female">
+                                            <label class="checkbox-label" value="female" for="female">
                                                 <i class="checkbox-label_dots"></i>
                                             </label>
                                             <label class="checkbox-label-text color-gray cursor-pointer" for="female">
@@ -120,6 +123,7 @@
                                             </label>
                                         </div>
                                     </section>
+                                    <p data-error="genrer" class="text-default color-error lg:px-1 hide"></p>
                                 </section>
                                 <section class="w-full row-form">
                                     <section class="w-full py-0 lg:px-1">
@@ -199,16 +203,17 @@
                     </p>
                 </section> 
                 <section class="w-full py-1">
-                    <form class="w-full lg:py-1 position-relative z-index-9">
+                    <form id="formTwo" class="w-full lg:py-1 position-relative z-index-9">
                         <section class="w-full display-flex align-items justify-center flex-wrap">
                             <div class="px-1 col-12 md:col-5 display-flex">
                                 <div class="w-full">
                                     <label class="w-full md:px-1 text-default color-gray cursor-pointer" for="email">
-                                        Nome do seu amigo::
+                                        Nome do seu amigo:
                                     </label>
                                     <section class="w-full py-0 md:px-1">
-                                        <input id="email" class="w-full px-1 py-0 text-default" type="email">
+                                        <input id="name" name="name" class="w-full px-1 py-0 text-default" type="text">
                                     </section>
+                                    <p data-error="name" class="text-default color-error md:px-1 hide"></p>
                                 </div>
                             </div>
                             <div class="px-1 py-1 md:py-3 col-12 md:col-5 display-flex">
@@ -217,8 +222,9 @@
                                         E-mail:
                                     </label>
                                     <section class="w-full py-0 md:px-1">
-                                        <input id="email" class="w-full px-1 py-0 text-default" type="email">
+                                        <input id="email" name="email" class="w-full px-1 py-0 text-default" type="email">
                                     </section>
+                                    <p data-error="email" class="text-default color-error md:px-1 hide"></p>
                                 </div>
                             </div>
                             <div class="px-1 py-2 md:py-0 col-8 md:col-5 display-flex">

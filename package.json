@@ -36,6 +36,8 @@
     "@types/imagesloaded": "^4.1.2",
     "animejs": "^3.2.1",
     "axios": "^0.21.4",
+    "cpf-cnpj-validator": "^1.0.3",
+    "email-validator": "^2.0.4",
     "imagesloaded": "^4.1.4",
     "lottie-web": "^5.7.13",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
