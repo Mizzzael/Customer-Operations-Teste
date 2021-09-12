@@ -11,7 +11,7 @@ module.exports = {
     watch: false,
     output: {
         path: path.join(__dirname, 'dist'),
-        publicPath: '/',
+        publicPath: '/Customer-Operations-Teste/',
         filename: 'app.[hash].js',
         chunkFilename: '[name].js'
     },
